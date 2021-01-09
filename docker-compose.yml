@@ -11,7 +11,7 @@ services:
         - ~/jd/logs:/opt/JDownloader/logs #optional
         - /etc/localtime:/etc/localtime:ro #optional
     environment: 
-            MYJD_USER: ${USER} #optional (see [Identify](https://github.com/jaymoulin/docker-jdownloader#identify))
+            MYJD_USER: ${USERNAME} #optional (see [Identify](https://github.com/jaymoulin/docker-jdownloader#identify))
             MYJD_PASSWORD: ${PASSWORD} #optional (see [Identify](https://github.com/jaymoulin/docker-jdownloader#identify))
             MYJD_DEVICE_NAME: raspi #optional
             XDG_DOWNLOAD_DIR: /opt/JDownloader/Downloads #optional
