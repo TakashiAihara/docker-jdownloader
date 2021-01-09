@@ -1,0 +1,19 @@
+services:
+   jdownloader:
+    build: .
+    container_name: jdownloader
+    restart: always
+    #user: 1001:100
+    user: 0:0
+    volumes:
+        - ~/jd/cfg:/opt/JDownloader/cfg
+        - ~/jd/Downloads:/opt/JDownloader/Downloads
+        - ~/jd/logs:/opt/JDownloader/logs #optional
+        - /etc/localtime:/etc/localtime:ro #optional
+    environment: 
+            MYJD_USER: ${USER} #optional (see [Identify](https://github.com/jaymoulin/docker-jdownloader#identify))
+            MYJD_PASSWORD: ${PASSWORD} #optional (see [Identify](https://github.com/jaymoulin/docker-jdownloader#identify))
+            MYJD_DEVICE_NAME: raspi #optional
+            XDG_DOWNLOAD_DIR: /opt/JDownloader/Downloads #optional
+    ports:
+        - 3129:3129 
