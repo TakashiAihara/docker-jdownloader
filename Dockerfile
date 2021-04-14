@@ -1,7 +1,8 @@
 FROM openjdk:jre-alpine as builder
 
-COPY qemu-aarch64-static /usr/bin/
-COPY qemu-arm-static /usr/bin/
+RUN apk add curl
+RUN curl -L https://github.com/multiarch/qemu-user-static/releases/download/v5.2.0-2/qemu-aarch64-static -o /usr/bin/qemu-aarch64-static
+RUN curl -L https://github.com/multiarch/qemu-user-static/releases/download/v5.2.0-2/qemu-arm-static -o /usr/bin/qemu-arm-static
 
 FROM builder
 
