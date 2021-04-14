@@ -15,5 +15,6 @@ services:
             MYJD_PASSWORD: ${PASSWORD} #optional (see [Identify](https://github.com/jaymoulin/docker-jdownloader#identify))
             MYJD_DEVICE_NAME: ubuntu #optional
             XDG_DOWNLOAD_DIR: /opt/JDownloader/Downloads #optional
+            TZ: Asia/Tokyo
     ports:
         - 3129:3129 
