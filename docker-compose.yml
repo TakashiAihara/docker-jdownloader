@@ -6,9 +6,9 @@ services:
     #user: 1001:100
     user: 0:0
     volumes:
-        - ~/jd/cfg:/opt/JDownloader/cfg
-        - ~/jd/Downloads:/opt/JDownloader/Downloads
-        - ~/jd/logs:/opt/JDownloader/logs #optional
+        - /mnt/jd/cfg:/opt/JDownloader/cfg
+        - /mnt/jd/Downloads:/opt/JDownloader/Downloads
+        - /mnt/jd/logs:/opt/JDownloader/logs #optional
         - /etc/localtime:/etc/localtime:ro #optional
     environment: 
             MYJD_USER: ${USERNAME} #optional (see [Identify](https://github.com/jaymoulin/docker-jdownloader#identify))
